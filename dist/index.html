@@ -4,16 +4,146 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./styles/index.css" />
   <title>13-test-homework</title>
- <script defer src="bundle.js"></script></head>
+ <script defer src="index.js"></script></head>
 
  <body>
   <div class="container">
    <h1 class="home-title">13-test-homework</h1>
-   <a class="navigation-link" href="../index.html"> &#8666; To main</a>
-   <h2>Символи. Генератори. Ітератори</h2>
+   <a
+    class="navigation-link"
+    href="https://prokhorchukcursor.github.io/cursor-hw/index.html"
+   >
+    &#8666; To main</a
+   >
+   <h2>Інструменти. Модульність коду та Webpack</h2>
    <h2>Задачі</h2>
+   <h2>
+    Створити вебпак конфіг, який збирає ваш проект з різних модулів. Налаштуйте
+    транспіляцію коду за допомогою babeljs до стандарту ES5. Підключіть loader
+    зображень (можна взяти абсолютно будь-яке) та css стилів. Якщо у вас є стилі
+    по вашим домашнім завданням всередині JS коду або як окремий css файл –
+    імпортуйте їх окремими файлами через спеціальний лоадер import
+    "example.css"; Ваш головний файл index.js повинен імпортувати та викликати
+    хоча б по 1ій функції з кожного зробленого вами раніше домашнього завдання.
+   </h2>
+   <hr />
+   <ol>
+    <li>
+     <h2>00-test-homework</h2>
+     <div id="hw-00"></div>
+    </li>
+    <li>
+     <h2>01-test-homework</h2>
+     <div class="flex-center">
+      <button id="hw-01-btn">Запустити</button>
+     </div>
+     <div id="hw-01"></div>
+    </li>
+    <li>
+     <h2>02-test-homework</h2>
+     <div id="hw-02"></div>
+    </li>
+    <li>
+     <h2>03-test-homework</h2>
+     <div id="hw-03"></div>
+    </li>
+    <li>
+     <h2>04-test-homework</h2>
+     <div id="hw-04"></div>
+    </li>
+    <li>
+     <h2>05-test-homework</h2>
+     <div id="hw-05"></div>
+    </li>
+    <li>
+     <h2>06-test-homework</h2>
+     <div id="hw-06"></div>
+    </li>
+    <li>
+     <h2>07-test-homework</h2>
+     <div id="hw-07"></div>
+    </li>
+    <li>
+     <h2>08-test-homework</h2>
+     <div id="hw-08">
+      <h2>
+       Зробіть 25 квадратів розміру 50х50 пікселів кожен, зафарбовані у
+       випадковий колір. Квадрати мають розташовуватись по 5 в ряд. Щоб квадрати
+       з'явились на сторінці, необхідно викликати функцію generateBlocks();
+      </h2>
+      <h2>
+       Advanced зробіть так, щоб квадрати змінювали колір раз на секунду. Щоб
+       квадрати з'явились на сторінці та почали змінюватись, необхідно викликати
+       функцію generateBlocksInterval(); Приклад виконаного ДЗ на відео
+      </h2>
+      <button id="generateBlocks-button" class="js-stop">Перевірити</button>
+      <div class="result-container">
+       <div class="result" id="generateBlocks-result"></div>
+      </div>
+     </div>
+    </li>
+    <li>
+     <h2>09-test-homework</h2>
+     <h2>
+      Необхідно написати програму, яка буде зчитувати з клавіатури натискання
+      клавіш та відтворювати унікальний звук для кожної клавіши
+     </h2>
+
+     <h2 class="piano-title">Можете грати як клавішами, так і мишкою</h2>
+
+     <div class="piano-place">
+      <div class="piano-container">
+       <div class="piano-container-up">
+        <button data-key="81" class="piano-key up">Q</button>
+        <button data-key="87" class="piano-key up">W</button>
+        <button data-key="69" class="piano-key up">E</button>
+        <button data-key="82" class="piano-key up">R</button>
+        <button data-key="84" class="piano-key up">T</button>
+        <button data-key="89" class="piano-key up">Y</button>
+        <button data-key="85" class="piano-key up">U</button>
+       </div>
+       <div class="piano-container-down">
+        <button data-key="65" class="piano-key down">A</button>
+        <button data-key="83" class="piano-key down">S</button>
+        <button data-key="68" class="piano-key down">D</button>
+        <button data-key="70" class="piano-key down">F</button>
+        <button data-key="71" class="piano-key down">G</button>
+        <button data-key="72" class="piano-key down">H</button>
+        <button data-key="74" class="piano-key down">J</button>
+        <button data-key="75" class="piano-key down">K</button>
+       </div>
+      </div>
+     </div>
+
+     <!-- audio -->
+     <div id="hw-09"></div>
+    </li>
+    <li>
+     <h2>10-test-homework</h2>
+     <div id="hw-10"></div>
+    </li>
+    <li>
+     <h2>11-test-homework</h2>
+     <div id="hw-11">
+      <h3 class="function-title">
+       Виведіть список усіх планет, які були у зоряних війнах. Додайте кнопку
+       next, яка завантажить наступну сторінку зі списком планет. Попередня
+       сторінка при цьому має пропасти. (відбувається заміна даних)
+      </h3>
+      <div id="getPlanets-result"></div>
+      <div class="control">
+       <button id="getPlanets-back" class="js-stop">Попередня</button>
+       <div id="getPlanets-page"></div>
+       <button id="getPlanets-next" class="js-stop">Наступна</button>
+      </div>
+     </div>
+    </li>
+    <li>
+     <h2>12-test-homework</h2>
+     <div id="hw-12"></div>
+    </li>
+   </ol>
   </div>
   <script src="./index.js"></script>
  </body>

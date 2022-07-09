@@ -1,12 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const audioSpriteWebpackPlugin = require("audiosprite-webpack-plugin");
+const audioSupport = true;
 
 module.exports = {
  mode: "development",
  entry: path.resolve(__dirname, "src/index.js"),
  output: {
   path: path.resolve(__dirname, "dist"),
-  filename: "bundle.js",
+  filename: "index.js",
  },
  devServer: {
   open: true,
@@ -15,11 +17,31 @@ module.exports = {
   new HtmlWebpackPlugin({
    template: path.resolve(__dirname, "src/index.html"),
   }),
+  new audioSpriteWebpackPlugin.Plugin({
+   audiosprite: {
+    output: "audioSpriteName",
+    export: ["mp3", "ogg", "ac3", "m4a", "caf"],
+    bitrate: 64,
+   },
+  }),
  ],
  module: {
   rules: [
    {
-    test: /\.(png|jpe?g|svg|gif)$/i,
+    test: /\.(mp3|wav)$/,
+    include: /(sounds)/,
+    loader: audioSpriteWebpackPlugin.loader,
+    options: {
+     emptySprite: !audioSupport,
+    },
+   },
+   {
+    test: /audioSpriteName\.(mp3|ogg|ac3|m4a|caf)$/,
+    exclude: /(sounds)/,
+    loader: "file-loader",
+   },
+   {
+    test: /\.(png|jpe?g|svg|mp3|gif)$/i,
     use: [
      {
       loader: "file-loader",
@@ -27,7 +49,7 @@ module.exports = {
     ],
    },
    {
-    test: /\.scss$/i,
+    test: /\.css$/i,
     use: ["style-loader", "css-loader"],
    },
    {
@@ -43,3 +65,10 @@ module.exports = {
   ],
  },
 };
+
+if (!audioSupport) {
+ config.module.rules.push({
+  test: /howler/,
+  loader: audioSpriteWebpackPlugin.emptyHowlerLoader,
+ });
+}

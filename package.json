@@ -3,7 +3,13 @@
  "version": "1.0.0",
  "main": "index.js",
  "dependencies": {
+  "audiosprite-webpack-plugin": "^0.1.6",
   "gh-pages": "^4.0.0"
+ },
+ "homepage": "https://prokhorchukcursor.github.io/cursor-webpack",
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/ProkhorchukCursor/cursor-webpack.git"
  },
  "scripts": {
   "build": "webpack",
