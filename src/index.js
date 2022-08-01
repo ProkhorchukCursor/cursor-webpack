@@ -3,8 +3,6 @@ import "./styles/08-test-homework.css";
 import "./styles/09-test-homework.css";
 import "./styles/11-test-homework.css";
 
-import "./js/00-test-homework";
-import "./js/01-test-homework";
 import "./js/02-test-homework";
 import "./js/03-test-homework";
 import "./js/04-test-homework/js";
